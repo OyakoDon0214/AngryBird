@@ -8,6 +8,7 @@ public class WebCamController : MonoBehaviour
     int height = 1080;
     int fps = 30;
     WebCamTexture webcamTexture;
+    // aaa
 
     void Start () {
         WebCamDevice[] devices = WebCamTexture.devices;

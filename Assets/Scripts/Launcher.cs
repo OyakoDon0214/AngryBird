@@ -22,39 +22,54 @@ public class Launcher : MonoBehaviour
     [SerializeField]
     public float forceAngle = 45.0f;
 
+    GameObject unitychan; 
+    VNectModel VNectModel; //Scriptが入る変数
     void Start()
     {
-
+        //外部スクリプトを取得する処理
+        unitychan = GameObject.Find ("unitychan");
+        VNectModel = unitychan.GetComponent<VNectModel>(); 
     }
-
     // Update is called once per frame
     void Update()
     {
         //スペースが押されたとき
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            shoot(forceAngle, forceMagnitude);
+            shoot(new Vector3(5,5,5));
+        }
+        //マウスがクリックされたとき
+        if(Input.GetMouseButtonDown(0)){
+            var rHand=VNectModel.JointPoints[PositionIndex.rHand.Int()];
+            var lHand=VNectModel.JointPoints[PositionIndex.lHand.Int()];
+            Vector3 force=lHand.Pos3D-rHand.Pos3D;
+            Debug.Log(force);
+            Debug.Log("y"+force.y);
+            Debug.Log("L"+lHand.Pos3D);
+            Debug.Log("R"+rHand.Pos3D);
+
+            force.z=0;
+            shoot(force);
         }
     }
-
-    public void shoot(float forceAngle, float forceMagnitude){
+    public void shoot(Vector3 force){
         //ballをインスタンス化して発射
         GameObject createdBall = Instantiate(ball) as GameObject;
         createdBall.transform.position = ballPos.transform.position;
 
-        // 入力された角度をラジアンに変換
-        float rad = forceAngle * Mathf.Deg2Rad;
+        // // 入力された角度をラジアンに変換
+        // float rad = forceAngle * Mathf.Deg2Rad;
 
-        // それぞれの軸の成分を計算
-        float x = Mathf.Cos(rad);
-        float y = Mathf.Sin(rad);
-        float z = 0.0f;
+        // // それぞれの軸の成分を計算
+        // float x = Mathf.Cos(rad);
+        // float y = Mathf.Sin(rad);
+        // float z = 0.0f;
 
-        // Vector3型に格納
-        forceDirection = new Vector3(x, y, z);
+        // // Vector3型に格納
+        // forceDirection = new Vector3(x, y, z);
 
-        // 向きと大きさからSphereに加わる力を計算する
-        force = forceMagnitude * forceDirection;
+        // // 向きと大きさからSphereに加わる力を計算する
+        // force = forceMagnitude * forceDirection;
 
         // Rigidbodyに力を加えて発射
         createdBall.GetComponent<Rigidbody>().AddForce(force, ForceMode.Impulse);

@@ -20,7 +20,8 @@ public class Launcher : MonoBehaviour
 
     // X軸からの角度
     [SerializeField]
-    public float forceAngle = 45.0f;
+    public float forceX= 1.0f;
+    public float forceY= 1.0f;
 
     GameObject unitychan; 
     VNectModel VNectModel; //Scriptが入る変数
@@ -36,7 +37,10 @@ public class Launcher : MonoBehaviour
         //スペースが押されたとき
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            shoot(new Vector3(5,5,5));
+
+            forceDirection = new Vector3(forceX, forceY, 0);
+            Vector3 force=forceDirection*forceMagnitude;
+            shoot(force);
         }
         //マウスがクリックされたとき
         if(Input.GetMouseButtonDown(0)){

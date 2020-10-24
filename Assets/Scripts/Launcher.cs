@@ -47,12 +47,9 @@ public class Launcher : MonoBehaviour
             var rHand=VNectModel.JointPoints[PositionIndex.rHand.Int()];
             var lHand=VNectModel.JointPoints[PositionIndex.lHand.Int()];
             Vector3 force=lHand.Pos3D-rHand.Pos3D;
-            Debug.Log(force);
-            Debug.Log("y"+force.y);
-            Debug.Log("L"+lHand.Pos3D);
-            Debug.Log("R"+rHand.Pos3D);
-
             force.z=0;
+            force/=20;
+            Debug.Log("force"+force);
             shoot(force);
         }
     }

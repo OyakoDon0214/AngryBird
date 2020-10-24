@@ -22,7 +22,7 @@ public class Goal : MonoBehaviour
             GameObject.Destroy (gameObject);
         }
     }
-
+//  コメント追加
     void OnCollisionStay(Collision collision) {
         if (collision.gameObject.tag == "block") {
             Vector3 v = collision.rigidbody.velocity - GetComponent<Rigidbody> ().velocity;

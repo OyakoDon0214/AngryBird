@@ -41,7 +41,7 @@ public class Launcher : MonoBehaviour
             forceDirection = new Vector3(forceX, forceY, 0);
             Vector3 force=forceDirection*forceMagnitude;
             shoot(force);
-        }
+       }
         //マウスがクリックされたとき
         if(Input.GetMouseButtonDown(0)){
             var rHand=VNectModel.JointPoints[PositionIndex.rHand.Int()];
@@ -58,6 +58,8 @@ public class Launcher : MonoBehaviour
         GameObject createdBall = Instantiate(ball) as GameObject;
         createdBall.transform.position = ballPos.transform.position;
 
+        //.ボールの個数-1
+        ScoreManager.ball_num --;
         // // 入力された角度をラジアンに変換
         // float rad = forceAngle * Mathf.Deg2Rad;
 

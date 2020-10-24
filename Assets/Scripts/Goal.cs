@@ -29,8 +29,14 @@ public class Goal : MonoBehaviour
             Vector3 v = collision.rigidbody.velocity;// - GetComponent<Rigidbody> ().velocity;
             float p = Mathf.Sqrt (v.x * v.x + v.y * v.y);
             press +=  p;
+        }
 //            ball.score += p;
 //            Debug.Log(collision.rigidbody.velocity);
+
+        if (collision.gameObject.tag == "ball") {
+            Vector3 v = collision.rigidbody.velocity;// - GetComponent<Rigidbody> ().velocity;
+            float p = Mathf.Sqrt (v.x * v.x + v.y * v.y);
+            press +=  p;
         }
     }
 }

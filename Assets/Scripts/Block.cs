@@ -17,14 +17,16 @@ public class Block : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (press > 20.0) {
+        if (press > 10.0) {
             //スコア処理を追加
 //            FindObjectOfType<Score>().AddPoint(10);
 //            ball.score += 100;
             ScoreManager.score_num += 100f;
             //スコアの数字を表示
+            //スコアの数字を表示
             GameObject scoreNumberCopy = Instantiate(scoreNumber) as GameObject;
             scoreNumberCopy.transform.position = this.transform.position;
+            GameObject.Destroy (scoreNumberCopy,1.5);
             GameObject.Destroy (gameObject);
             
         }
@@ -34,9 +36,8 @@ public class Block : MonoBehaviour
             Vector3 v = collision.rigidbody.velocity;// - GetComponent<Rigidbody> ().velocity;
             float p = Mathf.Sqrt (v.x * v.x + v.y * v.y);
             press +=  p;
-            //スコアの数字を表示
-            GameObject scoreNumberCopy = Instantiate(scoreNumber) as GameObject;
-            scoreNumberCopy.transform.position = this.transform.position;
+            Debug.Log("press"+press);
+            
         }
     }
 }

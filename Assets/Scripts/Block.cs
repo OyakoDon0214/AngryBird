@@ -26,7 +26,7 @@ public class Block : MonoBehaviour
             //スコアの数字を表示
             GameObject scoreNumberCopy = Instantiate(scoreNumber) as GameObject;
             scoreNumberCopy.transform.position = this.transform.position;
-            GameObject.Destroy (scoreNumberCopy,1.5);
+            GameObject.Destroy (scoreNumberCopy,1.5f);
             GameObject.Destroy (gameObject);
             
         }

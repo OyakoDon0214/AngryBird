@@ -30,10 +30,12 @@ public class Goal : MonoBehaviour
     }
 //  コメント追加
     void OnCollisionStay(Collision collision) {
-        if (collision.gameObject.tag == "block"|"ball") {
+        if (collision.gameObject.tag == "block"|collision.gameObject.tag =="ball") {
             Vector3 v = collision.rigidbody.velocity;// - GetComponent<Rigidbody> ().velocity;
             float p = Mathf.Sqrt (v.x * v.x + v.y * v.y);
             press +=  p;
+            GameObject scoreNumberCopy = Instantiate(scoreNumber) as GameObject;
+            scoreNumberCopy.transform.position = this.transform.position;
         }
     }
 }

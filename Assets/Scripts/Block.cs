@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+    float press = 0;
 
     public GameObject scoreNumber;
 
@@ -29,10 +30,13 @@ public class Block : MonoBehaviour
         }
     }
     void OnCollisionStay(Collision collision) {
-        if (collision.gameObject.tag == "block"|"ball") {
+        if (collision.gameObject.tag == "block"|collision.gameObject.tag =="ball") {
             Vector3 v = collision.rigidbody.velocity;// - GetComponent<Rigidbody> ().velocity;
             float p = Mathf.Sqrt (v.x * v.x + v.y * v.y);
             press +=  p;
+            //スコアの数字を表示
+            GameObject scoreNumberCopy = Instantiate(scoreNumber) as GameObject;
+            scoreNumberCopy.transform.position = this.transform.position;
         }
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     float press = 0;
+    public GameObject scoreNumber;
 
     // Start is called before the first frame update
     void Start()
@@ -20,20 +21,16 @@ public class Goal : MonoBehaviour
 //            FindObjectOfType<Score>().AddPoint(10);
 //            ball.score += 100;
             ScoreManager.score_num += 100f;
+            //スコアの数字を表示
+            GameObject scoreNumberCopy = Instantiate(scoreNumber) as GameObject;
+            scoreNumberCopy.transform.position = this.transform.position;
             GameObject.Destroy (gameObject);
+            
         }
     }
 //  コメント追加
     void OnCollisionStay(Collision collision) {
-        if (collision.gameObject.tag == "block") {
-            Vector3 v = collision.rigidbody.velocity;// - GetComponent<Rigidbody> ().velocity;
-            float p = Mathf.Sqrt (v.x * v.x + v.y * v.y);
-            press +=  p;
-        }
-//            ball.score += p;
-//            Debug.Log(collision.rigidbody.velocity);
-
-        if (collision.gameObject.tag == "ball") {
+        if (collision.gameObject.tag == "block"|"ball") {
             Vector3 v = collision.rigidbody.velocity;// - GetComponent<Rigidbody> ().velocity;
             float p = Mathf.Sqrt (v.x * v.x + v.y * v.y);
             press +=  p;

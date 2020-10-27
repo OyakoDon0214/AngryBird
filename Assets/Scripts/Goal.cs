@@ -23,7 +23,7 @@ public class Goal : MonoBehaviour
             Vector3 v = collision.rigidbody.velocity;// - GetComponent<Rigidbody> ().velocity;
             float p = Mathf.Sqrt (v.x * v.x + v.y * v.y);
             press +=  p;
-        if (press > 5.0) {
+        if (press > 3.0) {
             //スコア処理を追加
 //            FindObjectOfType<Score>().AddPoint(10);
 //            ball.score += 100;

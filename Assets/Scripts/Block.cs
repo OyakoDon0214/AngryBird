@@ -30,19 +30,19 @@ public class Block : MonoBehaviour
             press =  p;
             Debug.Log("press"+press);
             
-         if(1<press && press<3){
+         if(1<press && press<2){
             ScoreManager.score_num += 50f;
             GameObject scoreNumberCopy = Instantiate(score50) as GameObject;
             scoreNumberCopy.transform.position = this.transform.position;
             GameObject.Destroy (scoreNumberCopy,0.5f);
         }
-        if(3<press && press<5.0){
+        if(2<press && press<3.0){
             ScoreManager.score_num += 100f;
             GameObject scoreNumberCopy = Instantiate(score100) as GameObject;
             scoreNumberCopy.transform.position = this.transform.position;
             GameObject.Destroy (scoreNumberCopy,0.5f);
         }
-        if (press > 5.0) {
+        if (press > 3.0) {
             //スコア処理を追加
 //            FindObjectOfType<Score>().AddPoint(10);
 //            ball.score += 100;

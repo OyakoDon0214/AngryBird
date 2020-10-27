@@ -16,3 +16,4 @@ public class ball : MonoBehaviour
         
     }
 }
+//適当な変更

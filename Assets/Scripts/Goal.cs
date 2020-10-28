@@ -6,6 +6,7 @@ public class Goal : MonoBehaviour
 {
     float press = 0;
     public GameObject score5000;
+    public static float goal_num = 0f; // スコア変数 
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class Goal : MonoBehaviour
             scoreNumberCopy.transform.position = this.transform.position;
             GameObject.Destroy (gameObject);
             GameObject.Destroy (scoreNumberCopy,1.5f);
+            goal_num ++;
 
             
         }

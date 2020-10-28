@@ -30,17 +30,34 @@ public class ScoreManager : MonoBehaviour {
       score_text.text =  "Score : " + score_num;
       Text star_text = star_object.GetComponent<Text> ();
 
-      if(0<=score_num  && score_num<=10000f){
-        star_text.text = "☆☆☆\n"+score_num+"\nMiss";
+
+      if(0<=score_num  && score_num<=30000f){
+        if(Goal.goal_num==6){
+          star_text.text = "☆☆☆\n"+score_num+"\nClear";
+        }else{
+          star_text.text = "☆☆☆\n"+score_num+"\nMiss";
+        }
       }
-      if(10000<score_num  && score_num<=20000){
-        star_text.text = "★☆☆\n"+score_num+"\nClear";
+      if(30000<score_num  && score_num<=50000){
+        if(Goal.goal_num==6){
+          star_text.text = "★☆☆\n"+score_num+"\nClear";
+        }else{
+          star_text.text = "★☆☆\n"+score_num+"\nMiss";
+        }
       }
-      if(20000<score_num && score_num<=30000){
-        star_text.text = "★★☆\n"+score_num+"\nClear";
+      if(50000<score_num && score_num<=70000){
+        if(Goal.goal_num==6){
+          star_text.text = "★★☆\n"+score_num+"\nClear";
+        }else{
+          star_text.text = "★★☆\n"+score_num+"\nMiss";
+        }
       }
-      if(30000<score_num && score_num<=40000){
-        star_text.text = "★★★\n"+score_num+"\nClear";
+      if(70000<score_num){
+        if(Goal.goal_num==6){
+          star_text.text = "★★★\n"+score_num+"\nClear";
+        }else{
+          star_text.text = "★★★\n"+score_num+"\nMiss";
+        }
       }
     }
   }

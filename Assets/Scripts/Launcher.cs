@@ -44,15 +44,14 @@ public class Launcher : MonoBehaviour
        }
         //マウスがクリックされたとき
         if(Input.GetMouseButtonDown(0)){
-            if(ScoreManager.finish_flag==0){
-                var rHand=VNectModel.JointPoints[PositionIndex.rHand.Int()];
-                var lHand=VNectModel.JointPoints[PositionIndex.lHand.Int()];
-                Vector3 force=lHand.Pos3D-rHand.Pos3D;
-                force.z=0;
-                force/=20;
-                Debug.Log("force"+force);
-                shoot(force);
-            }
+            var rHand=VNectModel.JointPoints[PositionIndex.rHand.Int()];
+            var lHand=VNectModel.JointPoints[PositionIndex.lHand.Int()];
+            Vector3 force=lHand.Pos3D-rHand.Pos3D;
+            force.z=0;
+            force/=20;
+            Debug.Log("force"+force);
+            shoot(force);
+            
         }
     }
     public void shoot(Vector3 force){

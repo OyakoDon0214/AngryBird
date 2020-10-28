@@ -9,6 +9,7 @@ public class Block : MonoBehaviour
     public GameObject score300;
     public GameObject score100;
     public GameObject score50;
+    public AudioClip sound;
 
 
 
@@ -29,6 +30,7 @@ public class Block : MonoBehaviour
             float p = Mathf.Sqrt (v.x * v.x + v.y * v.y);
             press =  p;
             Debug.Log("press"+press);
+            AudioSource.PlayClipAtPoint(sound, transform.position);
             
          if(1<press && press<2){
             ScoreManager.score_num += 50f;

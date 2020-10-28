@@ -1741,6 +1741,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &835735433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835735424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68310dca47a64d9297f24e008db2995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &858646173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,22 +2269,22 @@ PrefabInstance:
     - target: {fileID: 7912725289051142166, guid: d28c8feda8a39674bb739caac7568c1d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.016844252
       objectReference: {fileID: 0}
     - target: {fileID: 7912725289051142166, guid: d28c8feda8a39674bb739caac7568c1d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.024959538
       objectReference: {fileID: 0}
     - target: {fileID: 7912725289051142166, guid: d28c8feda8a39674bb739caac7568c1d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.0083380155
       objectReference: {fileID: 0}
     - target: {fileID: 7912725289051142166, guid: d28c8feda8a39674bb739caac7568c1d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99951184
       objectReference: {fileID: 0}
     - target: {fileID: 7912725289051142166, guid: d28c8feda8a39674bb739caac7568c1d,
         type: 3}
@@ -2282,18 +2294,23 @@ PrefabInstance:
     - target: {fileID: 7912725289051142166, guid: d28c8feda8a39674bb739caac7568c1d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 1.9060001
       objectReference: {fileID: 0}
     - target: {fileID: 7912725289051142166, guid: d28c8feda8a39674bb739caac7568c1d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 2.878
       objectReference: {fileID: 0}
     - target: {fileID: 7912725289051142166, guid: d28c8feda8a39674bb739caac7568c1d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 1.0040001
       objectReference: {fileID: 0}
+    - target: {fileID: 7912725289051142167, guid: d28c8feda8a39674bb739caac7568c1d,
+        type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 38735dd1ea0704564b5f53037efb55ce, type: 3}
     - target: {fileID: 7912725289051142249, guid: d28c8feda8a39674bb739caac7568c1d,
         type: 3}
       propertyPath: m_Name

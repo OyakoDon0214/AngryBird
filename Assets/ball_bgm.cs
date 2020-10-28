@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ball_out : MonoBehaviour
+public class ball_bgm : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -19,4 +19,5 @@ public class ball_out : MonoBehaviour
         }
         
     }
+
 }

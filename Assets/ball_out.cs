@@ -13,6 +13,10 @@ public class ball_out : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            GetComponent<AudioSource>().Play();  // 効果音を鳴らす
+        }
         
     }
 }

@@ -30,7 +30,6 @@ public class Block : MonoBehaviour
             float p = Mathf.Sqrt (v.x * v.x + v.y * v.y);
             press =  p;
             Debug.Log("press"+press);
-            AudioSource.PlayClipAtPoint(sound, transform.position);
             
          if(1<press && press<2){
             ScoreManager.score_num += 50f;
@@ -54,7 +53,7 @@ public class Block : MonoBehaviour
             scoreNumberCopy.transform.position = this.transform.position;
             GameObject.Destroy (scoreNumberCopy,0.5f);
             GameObject.Destroy (gameObject);
-            
+            AudioSource.PlayClipAtPoint(sound, transform.position);
         }
     }
 }

@@ -128,3 +128,4 @@ MonoBehaviour:
   score100: {fileID: 4395484860907873580, guid: ab82fee56a0c28542beb96fad81aa733,
     type: 3}
   score50: {fileID: 2833178209363131462, guid: 609a91e9296f6b04da86d20fbf7de7c8, type: 3}
+  sound: {fileID: 8300000, guid: 38735dd1ea0704564b5f53037efb55ce, type: 3}
